@@ -12,4 +12,8 @@ module FortunetellingsHelper
     end
   end
 
+  #今日が誕生日かどうか判定する。
+  def birthday?(date)
+    date[4,4] == Time.now.strftime('%m%d')
+  end
 end
