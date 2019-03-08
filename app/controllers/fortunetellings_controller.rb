@@ -10,6 +10,8 @@ class FortunetellingsController < ApplicationController
       @year = @date[0,4]
       @month = @date[4,2]
       @day = @date[6,2]
+      # Commonモジュールのconstellationメソッドを実行して、インスタンス変数に格納する。
+      @constellation = constellation(@month, @day.to_i)
     end
   end
 
