@@ -14,6 +14,8 @@ class FortunetellingsController < ApplicationController
       @constellation = constellation(@month, @day.to_i)
       # パラメタと今日の日付の差分をとり、年に当たる10,000で商を計算することで年齢がでる。
       @age = (Date.today.strftime("%Y%m%d").to_i - params[:date].to_i) / 10000
+      #sampleメソッドで実行されるたび@fortuneにランダムに配列から一つ要素を代入する。
+      @fortune = %w(大吉 中吉 吉 小吉 凶 大凶).sample
     end
   end
 
