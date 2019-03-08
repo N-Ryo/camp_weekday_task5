@@ -16,8 +16,8 @@ module Common
     index = month.to_i - 1
 
     # monthがString型なので、Symbol型に変更して、パラメタのdayとborder_dayのvalueを比較する。
-    # パラメタのdayの方が大きい場合は、参照するconstellation配列を一つ進める。（12月はindexを0にする。）
-    if border_day[month.to_sym] <= day
+    # パラメタのdayの方が大きい場合は、参照するconstellations配列を一つ進める。（12月はindexを0にする。）
+    if day >= border_day[month.to_sym]
       month == "12" ? index = 0 : index += 1
     end
     constellations[index]
