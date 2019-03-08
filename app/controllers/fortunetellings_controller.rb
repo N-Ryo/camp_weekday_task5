@@ -4,6 +4,13 @@ class FortunetellingsController < ApplicationController
   # before_actionでshowアクションが実行される前にset_dateメソッドを実行する。
   before_action :set_date, only: [:show]
   def show
+    # set_dateで@dateが格納されていない場合は、以下の変数は不必要なため条件分岐させる。
+    if @date
+      # 年月日をそれぞれString型の@dateから分割する。
+      @year = @date[0,4]
+      @month = @date[4,2]
+      @day = @date[6,2]
+    end
   end
 
   private

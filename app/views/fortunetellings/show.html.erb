@@ -2,4 +2,7 @@
 <% if @error_message %>
   <h1><%= @error_message %></h1>
 <% else %>
+  <%# コントローラから受けた値をそれぞれに渡していく。%>
+  <%# FortunetellingsHelperのbirthday?メソッドを使って、誕生日の時だけ表示させる文章を判定させる。%>
+  <p>あなたの誕生日は<%="#{@year}年#{@month}月#{@day}日"%>です。</p>
 <% end %>
