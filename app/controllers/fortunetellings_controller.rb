@@ -12,6 +12,8 @@ class FortunetellingsController < ApplicationController
       @day = @date[6,2]
       # Commonモジュールのconstellationメソッドを実行して、インスタンス変数に格納する。
       @constellation = constellation(@month, @day.to_i)
+      # パラメタと今日の日付の差分をとり、年に当たる10,000で商を計算することで年齢がでる。
+      @age = (Date.today.strftime("%Y%m%d").to_i - params[:date].to_i) / 10000
     end
   end
 
